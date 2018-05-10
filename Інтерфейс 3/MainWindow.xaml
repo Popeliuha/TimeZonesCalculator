@@ -1,0 +1,85 @@
+﻿<Window x:Class="Інтерфейс_3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Інтерфейс_3"
+        mc:Ignorable="d"
+        Icon="1.png"
+        Title="SuriTime" Height="330" Width="650">
+    <Grid Background="#FFCEC6FF">
+        <Slider x:Name="slider" Margin="91,91,89,0" VerticalAlignment="Top" Height="26" Maximum="12" Minimum="-12" Interval="100000" Delay="500000" TickPlacement="BottomRight" HorizontalContentAlignment="Center" Foreground="#FF090040" BorderBrush="White" TextOptions.TextHintingMode="Animated" AutoToolTipPlacement="BottomRight" Cursor="Arrow" FontWeight="Bold"/>
+        <TextBlock Margin="50,23,10,0" TextWrapping="Wrap" Text="Відображення реального часу з урахуванням часових поясів" VerticalAlignment="Top" Foreground="#FF090040" FontFamily="Bahnschrift Light" FontSize="20" FontWeight="Bold"/>
+        <TextBlock Margin="222,52,218,0" TextWrapping="Wrap" Text="Вкажіть часовий пояс" VerticalAlignment="Top" Foreground="#FF090040" FontFamily="Bahnschrift Light" FontSize="18" FontWeight="Bold">
+            <TextBlock.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="_New" Command="New">
+                        <MenuItem.Icon>
+                            <Image Source="add (1).png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="_Save" Command="Save">
+                        <MenuItem.Icon>
+                            <Image Source="add.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator />
+                    <MenuItem Header="_Exit" Command="Close" >
+                        <MenuItem.Icon>
+                            <Image Source="delete.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </ContextMenu>
+            </TextBlock.ContextMenu>
+        </TextBlock>
+        <Button Content="Згенерувати" Margin="242,137,236,0" VerticalAlignment="Top" Foreground="#FF090040" Background="White" Height="37" FontFamily="Bahnschrift Light" FontSize="20" FontWeight="Bold" Click="Button_Click"/>
+        <TextBox x:Name="result" Height="86" Margin="62,191,58,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Background="#FFCEC6FF" Foreground="#FF090040" BorderBrush="#FFCEC6FF" HorizontalContentAlignment="Center" FontFamily="Calibri" FontSize="48" TextChanged="TextBox_TextChanged" SelectionBrush="#FFCEC6FF" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.344"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="1.145"/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Menu Height="18" VerticalAlignment="Top" Background="White">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New" Command="New">
+                    <MenuItem.Icon>
+                        <Image Source="add (1).png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Save" Command="Save">
+                    <MenuItem.Icon>
+                        <Image Source="add.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="_Exit" Command="Close" >
+                    <MenuItem.Icon>
+                        <Image Source="delete.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="_How to use" Command="Help"/>
+                <MenuItem Header="_About" Command="Properties"/>
+            </MenuItem>
+            
+        </Menu>
+    </Grid>
+    <Window.CommandBindings>
+        <CommandBinding Command="Save" Executed="Save_Handler" />
+        <CommandBinding Command="New" Executed="Reset_Handler" />
+        <CommandBinding Command="Close" Executed="Exit_Handler" />
+        <CommandBinding Command="Help" Executed="Help_Handler" />
+        <CommandBinding Command="Properties" Executed="About_Handler" />
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Command="Save" Key="S" Modifiers="Control"/>
+        <KeyBinding Command="New" Key="N" Modifiers="Control"/>
+    </Window.InputBindings>
+
+  
+</Window>
