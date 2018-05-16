@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Media;
+using System.Threading;
+
 
 namespace Інтерфейс_3
 {
@@ -23,11 +26,12 @@ namespace Інтерфейс_3
         public MainWindow()
         {
             InitializeComponent();
+            
         }
-
+        
         public void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-           
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -132,6 +136,8 @@ namespace Інтерфейс_3
                 newDateTime = (newHours).ToString() + " година " + mins.ToString() + " хвилин.";
             }
             result.Text = " "+newDateTime.ToString();
+            SoundPlayer sound = new SoundPlayer(@"C:\Users\popel\Music\Drumro.wav");
+            sound.Play();
         }
 
         private void Save_Handler(object sender, ExecutedRoutedEventArgs e)
@@ -159,5 +165,28 @@ namespace Інтерфейс_3
         {
             MessageBox.Show("Автор: S U R R I. Авторські права збережено. Копіювання карається законом.", "Про програму");
         }
+
+        private void ChangeFirst_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            grid.Background=Brushes.GreenYellow;
+            MessageBox.Show("Color Block #1", "Changed");
+        }
+
+        private void ChangeSecond_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            grid.Background = Brushes.Violet;
+            MessageBox.Show("Color Block #2", "Changed");
+        }
+    }
+
+    public class WindowCommands
+    {
+        static WindowCommands()
+        {
+            ChangeFirst = new RoutedCommand("ChangeFirst", typeof(MainWindow));
+            ChangeSecond = new RoutedCommand("ChangeSecond", typeof(MainWindow));
+        }
+        public static RoutedCommand ChangeFirst { get; set; }
+        public static RoutedCommand ChangeSecond { get; set; }
     }
 }

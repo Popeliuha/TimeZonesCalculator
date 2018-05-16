@@ -28,3 +28,18 @@ D:\Education\Інтерфейс 3\Інтерфейс 3\obj\Debug\Інтерфе�
 D:\Education\Інтерфейс 3\Інтерфейс 3\obj\Debug\Інтерфейс 3.csproj.CoreCompileInputs.cache
 D:\Education\Інтерфейс 3\Інтерфейс 3\obj\Debug\Інтерфейс 3.exe
 D:\Education\Інтерфейс 3\Інтерфейс 3\obj\Debug\Інтерфейс 3.pdb
+D:\Education\TimeZones\Інтерфейс 3\bin\Debug\Інтерфейс 3.exe.config
+D:\Education\TimeZones\Інтерфейс 3\bin\Debug\Інтерфейс 3.exe
+D:\Education\TimeZones\Інтерфейс 3\bin\Debug\Інтерфейс 3.pdb
+D:\Education\TimeZones\Інтерфейс 3\obj\Debug\Інтерфейс 3.csprojResolveAssemblyReference.cache
+D:\Education\TimeZones\Інтерфейс 3\obj\Debug\MainWindow.g.cs
+D:\Education\TimeZones\Інтерфейс 3\obj\Debug\App.g.cs
+D:\Education\TimeZones\Інтерфейс 3\obj\Debug\Інтерфейс 3_MarkupCompile.cache
+D:\Education\TimeZones\Інтерфейс 3\obj\Debug\Інтерфейс 3_MarkupCompile.lref
+D:\Education\TimeZones\Інтерфейс 3\obj\Debug\MainWindow.baml
+D:\Education\TimeZones\Інтерфейс 3\obj\Debug\Інтерфейс 3.g.resources
+D:\Education\TimeZones\Інтерфейс 3\obj\Debug\Інтерфейс_3.Properties.Resources.resources
+D:\Education\TimeZones\Інтерфейс 3\obj\Debug\Інтерфейс 3.csproj.GenerateResource.cache
+D:\Education\TimeZones\Інтерфейс 3\obj\Debug\Інтерфейс 3.csproj.CoreCompileInputs.cache
+D:\Education\TimeZones\Інтерфейс 3\obj\Debug\Інтерфейс 3.exe
+D:\Education\TimeZones\Інтерфейс 3\obj\Debug\Інтерфейс 3.pdb

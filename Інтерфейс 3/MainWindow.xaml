@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Icon="1.png"
         Title="SuriTime" Height="330" Width="650">
-    <Grid Background="#FFCEC6FF">
-        <Slider x:Name="slider" Margin="91,91,89,0" VerticalAlignment="Top" Height="26" Maximum="12" Minimum="-12" Interval="100000" Delay="500000" TickPlacement="BottomRight" HorizontalContentAlignment="Center" Foreground="#FF090040" BorderBrush="White" TextOptions.TextHintingMode="Animated" AutoToolTipPlacement="BottomRight" Cursor="Arrow" FontWeight="Bold"/>
+    <Grid x:Name="grid" Background="#FFC8A5FA">
+        <Slider x:Name="slider" Margin="91,91,89,0" VerticalAlignment="Top" Height="26" Maximum="12" Minimum="-12" Interval="100000" Delay="500000" TickPlacement="BottomRight" HorizontalContentAlignment="Center" Foreground="#FF090040" BorderBrush="#FFF5DCC8" TextOptions.TextHintingMode="Animated" AutoToolTipPlacement="BottomRight" Cursor="Arrow" FontWeight="Bold"/>
         <TextBlock Margin="50,23,10,0" TextWrapping="Wrap" Text="Відображення реального часу з урахуванням часових поясів" VerticalAlignment="Top" Foreground="#FF090040" FontFamily="Bahnschrift Light" FontSize="20" FontWeight="Bold"/>
         <TextBlock Margin="222,52,218,0" TextWrapping="Wrap" Text="Вкажіть часовий пояс" VerticalAlignment="Top" Foreground="#FF090040" FontFamily="Bahnschrift Light" FontSize="18" FontWeight="Bold">
             <TextBlock.ContextMenu>
@@ -32,8 +32,8 @@
                 </ContextMenu>
             </TextBlock.ContextMenu>
         </TextBlock>
-        <Button Content="Згенерувати" Margin="242,137,236,0" VerticalAlignment="Top" Foreground="#FF090040" Background="White" Height="37" FontFamily="Bahnschrift Light" FontSize="20" FontWeight="Bold" Click="Button_Click"/>
-        <TextBox x:Name="result" Height="86" Margin="62,191,58,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Background="#FFCEC6FF" Foreground="#FF090040" BorderBrush="#FFCEC6FF" HorizontalContentAlignment="Center" FontFamily="Calibri" FontSize="48" TextChanged="TextBox_TextChanged" SelectionBrush="#FFCEC6FF" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+        <Button Content="Згенерувати" Margin="222,151,218,0" VerticalAlignment="Top" Foreground="#FF090040" Height="54" FontFamily="Bahnschrift Light" FontSize="24" Click="Button_Click" BorderBrush="{x:Null}" Background="{x:Null}"/>
+        <TextBox x:Name="result" Height="86" Margin="63,209,57,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Background="{x:Null}" Foreground="#FF090040" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" FontFamily="Calibri" FontSize="48" TextChanged="TextBox_TextChanged" SelectionBrush="{x:Null}" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -43,7 +43,10 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <Menu Height="18" VerticalAlignment="Top" Background="White">
+        <Menu Height="23" VerticalAlignment="Top">
+            <Menu.Background>
+                <ImageBrush ImageSource="photo_2018-05-17_00-19-58.jpg" Stretch="None"/>
+            </Menu.Background>
             <MenuItem Header="_File">
                 <MenuItem Header="_New" Command="New">
                     <MenuItem.Icon>
@@ -62,12 +65,18 @@
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
+            <MenuItem Header="_Color">
+                <MenuItem Header="_Color 1" Command="local:WindowCommands.ChangeFirst"/>
+                <MenuItem Header="_Color 2" Command="local:WindowCommands.ChangeSecond"/>
+            </MenuItem>
             <MenuItem Header="_Help">
                 <MenuItem Header="_How to use" Command="Help"/>
                 <MenuItem Header="_About" Command="Properties"/>
             </MenuItem>
-            
+
         </Menu>
+
+
     </Grid>
     <Window.CommandBindings>
         <CommandBinding Command="Save" Executed="Save_Handler" />
@@ -75,11 +84,13 @@
         <CommandBinding Command="Close" Executed="Exit_Handler" />
         <CommandBinding Command="Help" Executed="Help_Handler" />
         <CommandBinding Command="Properties" Executed="About_Handler" />
+        <CommandBinding Command="local:WindowCommands.ChangeFirst" Executed="ChangeFirst_Executed" />
+        <CommandBinding Command="local:WindowCommands.ChangeSecond" Executed="ChangeSecond_Executed" />
     </Window.CommandBindings>
     <Window.InputBindings>
         <KeyBinding Command="Save" Key="S" Modifiers="Control"/>
         <KeyBinding Command="New" Key="N" Modifiers="Control"/>
     </Window.InputBindings>
 
-  
+
 </Window>
